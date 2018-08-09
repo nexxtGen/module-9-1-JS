@@ -1,0 +1,20 @@
+div {
+    border: 1px solid black;
+    width: 100px;
+    height: 140px; 
+    float: left;
+    margin: 30px ;
+    text-align: center;
+    padding: 10px;
+    opacity: 0.7;
+}
+
+.highlighted {
+    background: green;
+}
+.special-header header {
+    background: gray;
+}
+.important {
+    opacity: 1;
+}
