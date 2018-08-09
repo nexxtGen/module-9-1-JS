@@ -53,25 +53,23 @@ var data = [
 ];
 
 
-// Create all boxes from data. Add id, header:
+// Create all boxes from data. Add id, header, content, classes:
 
 for (var objects in data) {
     var obiektyTablicy = data[objects];     
-    var categories = obiektyTablicy['categories']; 
+    var categories = obiektyTablicy['categories'];     
     //var catDelComm = categories.replace(/,/g,"");  
     var newElement = document.createElement('div'); 
         //newElement.classList.add(obiektyTablicy['categories'].join(' '));      
-        newElement.classList.add(categories);       
+        newElement.classList.add(categories[0], categories[1], categories[2]);       
         newElement.innerHTML += '<header>' + obiektyTablicy['title'] +'</header>';
         newElement.innerHTML += obiektyTablicy['content'];
         newElement.id = obiektyTablicy['id'];  
-        document.body.appendChild(newElement);
-        
-        var box1 = document.getElementById('box1');
-        box1.classList.add.join('XXX');
+        document.body.appendChild(newElement);  
 } 
+        
 
-  
+ 
 //test separacja klas
 /*
 var categories;
@@ -83,12 +81,14 @@ for (var obiektyTablicy in data) {
     //document.write(categories);
     var cat1 = categories[0];
     var cat2 = categories[1];
-    var cat3 = categories[2];
+    var cat3 = categories[2];    
     //document.write( cat1 +'<br>')
-    document.write( categories +'<br>');  
+    //document.write( categories +'<br>');  
+    //document.write( cat1 +'<br>'); 
 } 
-*/
+document.write( cat1 +'<br>'); 
 
+*/
 
 
 
