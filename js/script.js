@@ -64,19 +64,20 @@ for (var objects in data) {
     var categories = obiektyTablicy['categories'];     
     //var catDelComm = categories.replace(/,/g,"");  
 	var newElement = document.createElement('div'); 
-		newElement.className = (obiektyTablicy['categories'].join(' ')); 
-
+		// działa- newElement.className = (obiektyTablicy['categories'].join(' ')); 
 		obiektyTablicy.categories.forEach(function(className) {
 			newElement.classList.add(className)
 		  });
-
+		/* źle
 		//newElement.classList.add.(obiektyTablicy['categories'].join(' '));      
         //newElement.classList.add(categories.join('XX'));      
-        //newElement.classList.add(categories[0], categories[1], categories[2]);       
+		//newElement.classList.add(categories[0], categories[1], categories[2]);  
+		*/     
         newElement.innerHTML += '<header>' + obiektyTablicy['title'] +'</header>';
         newElement.innerHTML += obiektyTablicy['content'];
         newElement.id = obiektyTablicy['id'];  
-        document.body.appendChild(newElement);  
+		document.body.appendChild(newElement);  
+		
 } 
 
 /*
