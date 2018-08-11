@@ -55,20 +55,46 @@ var data = [
 
 // Create all boxes from data. Add id, header, content, classes:
 
+//https://stormit.pl/pytania-rekrutacyjne-javascript/
+
+
+
 for (var objects in data) {
     var obiektyTablicy = data[objects];     
     var categories = obiektyTablicy['categories'];     
     //var catDelComm = categories.replace(/,/g,"");  
-    var newElement = document.createElement('div'); 
-        //newElement.classList.add(obiektyTablicy['categories'].join(' '));      
-        newElement.classList.add(categories[0], categories[1], categories[2]);       
+	var newElement = document.createElement('div'); 
+		newElement.className = (obiektyTablicy['categories'].join(' ')); 
+
+		obiektyTablicy.categories.forEach(function(className) {
+			newElement.classList.add(className)
+		  });
+
+		//newElement.classList.add.(obiektyTablicy['categories'].join(' '));      
+        //newElement.classList.add(categories.join('XX'));      
+        //newElement.classList.add(categories[0], categories[1], categories[2]);       
         newElement.innerHTML += '<header>' + obiektyTablicy['title'] +'</header>';
         newElement.innerHTML += obiektyTablicy['content'];
         newElement.id = obiektyTablicy['id'];  
         document.body.appendChild(newElement);  
 } 
-        
 
+/*
+var element;
+data.forEach (function(element, array) {
+	return element;
+	});
+document.write(element);
+
+var allCategories = data.map(function (category) {
+	return category.categories;
+});
+*/
+
+//document.write(allCategories);
+// \0   &nbsp;  \x20 \xC2\xA0
+
+// NAUKA!!! forEach  map filter reduce + obj.property
  
 //test separacja klas
 /*
